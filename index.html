@@ -3,159 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EASTMA — East Asia Seismic Model Assessment</title>
-  <meta name="description" content="Quantitative assessment of published East Asian lithosphere–mantle seismic velocity models.">
+  <title>EASTMA — 东亚速度模型评估</title>
+  <meta name="description" content="东亚公开岩石圈—地幔地震速度模型的定量评估。">
+  <link rel="alternate" hreflang="zh-CN" href="./">
+  <link rel="alternate" hreflang="en" href="en/index.html">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site">
   <div class="brand-bar">
-    <a class="brand" href="#home">EASTMA</a>
-    <span class="brand-sub sans">East Asia Seismic Model Assessment</span>
+    <div class="brand-wrap">
+      <a class="brand" href="#home">EASTMA</a>
+      <span class="brand-sub sans">East Asia Seismic Model Assessment</span>
+    </div>
+    <nav class="lang-switch" aria-label="Language">
+      <a href="#" class="current" aria-current="page">中文</a>
+      <a href="en/index.html" id="lang-other">EN</a>
+    </nav>
   </div>
   <nav class="site" aria-label="Primary">
-    <a href="#home" data-section="home" class="active">Home</a>
-    <a href="#region" data-section="region">Region</a>
-    <a href="#models" data-section="models">Models</a>
-    <a href="#similarity" data-section="similarity">SSIM</a>
-    <a href="#clustering" data-section="clustering">Clusters</a>
-    <a href="#waveforms" data-section="waveforms">Waveforms</a>
-    <a href="#methods" data-section="methods">Methods</a>
-    <a href="#cite" data-section="cite">Cite</a>
+    <a href="#home" data-section="home" class="active">首页</a>
+    <a href="#region" data-section="region">研究区</a>
+    <a href="#models" data-section="models">模型库</a>
+    <a href="#similarity" data-section="similarity">相似性</a>
+    <a href="#clustering" data-section="clustering">聚类</a>
+    <a href="#waveforms" data-section="waveforms">波形</a>
+    <a href="#methods" data-section="methods">方法</a>
+    <a href="#cite" data-section="cite">引用</a>
   </nav>
 </header>
 <main>
+
   <section id="home" class="block on">
     <div class="hero">
-      <p class="tag sans">Companion site</p>
+      <p class="tag sans">论文配套网站</p>
       <h1>EASTMA</h1>
-      <p class="lead">A repeatable assessment of published three-dimensional seismic velocity models for East Asia, combining model-space metrics with spectral-element forward tests.</p>
+      <p class="lead">东亚公开三维地震速度模型的可重复评估：模型空间度量与谱元法正演检验。</p>
     </div>
     <div class="metrics">
-      <div class="metric"><div class="v">24</div><div class="l">Published models catalogued</div></div>
-      <div class="metric"><div class="v">3</div><div class="l">Core FWI models compared</div></div>
-      <div class="metric"><div class="v">0.49 / 0.28</div><div class="l">Vs SSIM (EARA–FWEA / vs SinoScope)</div></div>
-      <div class="metric"><div class="v">20–120 s</div><div class="l">Forward-test period band</div></div>
+      <div class="metric"><div class="v">24</div><div class="l">收录公开模型</div></div>
+      <div class="metric"><div class="v">3</div><div class="l">参与定量对比的全域 FWI 模型</div></div>
+      <div class="metric"><div class="v">0.49 / 0.28</div><div class="l">Vs SSIM（EARA–FWEA / 相对 SinoScope）</div></div>
+      <div class="metric"><div class="v">20–120 s</div><div class="l">正演检验频段</div></div>
     </div>
-    <h2>What is compared</h2>
-    <p>The quantitative results use SinoScope1.0, EARA2024 and FWEA23. All three are recent adjoint full-waveform models with overlapping East Asian coverage. Comparisons are made in the laterally demeaned perturbation domain so that different 1-D references do not dominate the scores.</p>
-    <p>Four completed steps are shown here: (1) collection and NetCDF standardisation; (2) structural similarity; (3) depth-banded Gaussian-mixture clustering against Slab2; (4) SPECFEM3D Globe synthetics with a common CRUST1.0 crust above Moho. Independent scoring against observed waveforms, model fusion and adjoint inversion are still in progress and are not conclusions of this site.</p>
-    <figure class="figure"><img src="assets/fig4.jpg" alt="Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km." loading="lazy"><figcaption><span class="fig-id">Fig. 4</span> Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km. <span class="fig-zh">三个全域模型在 100、200、500 和 800 km 的 S 波速度相对扰动。</span></figcaption></figure>
-    <h3>Working conclusions (mantle only)</h3>
+    <h2>评估对象</h2>
+    <p>定量结果针对 SinoScope1.0、EARA2024 和 FWEA23。三者均为近年伴随法全波形反演模型，覆盖范围高度重合。对比在扣除横向平均后的扰动域中进行，避免不同一维参考模型主导评分。</p>
+    <p>这里展示已完成的四步：（1）收集与 NetCDF 标准化；（2）结构相似性；（3）深度分层高斯混合聚类，并与 Slab2 叠图；（4）SPECFEM3D Globe 正演，Moho 以上统一为 CRUST1.0。与观测波形的独立评分、模型融合和伴随反演仍在进行，不作为本站结论。</p>
+    <figure class="figure"><img src="assets/fig4.jpg" alt="三个全域模型在 100、200、500 和 800 km 的 S 波速度相对扰动。" loading="lazy"><figcaption><span class="fig-id">图 4</span> 三个全域模型在 100、200、500 和 800 km 的 S 波速度相对扰动。</figcaption></figure>
+    <h3>现阶段认识（仅地幔）</h3>
     <ul>
-      <li>The three models are closest in the lithosphere (about 80–200 km). Vs SSIM is 0.55–0.72 there, then falls through the crust, transition zone and below 660 km.</li>
-      <li>On a common 1.0° grid, EARA2024 and FWEA23 are about 1.7 times more similar to each other (Vs depth-mean SSIM 0.49) than either is to SinoScope1.0 (about 0.28).</li>
-      <li>Each model yields 30 velocity clusters. High-velocity clusters at 100–200 km and in the transition zone coincide with Slab2 for EARA2024 and FWEA23; SinoScope1.0 keeps the same first-order provinces with softer boundaries.</li>
-      <li>Synthetics of FWEA23 and EARA2024 stay close to the author reference; SinoScope1.0 departs more in the 20–40 s surface-wave band. Because crust is fixed to CRUST1.0, this statement applies only below Moho.</li>
+      <li>三模型在岩石圈（约 80–200 km）最接近。该带 Vs 的 SSIM 为 0.55–0.72，地壳、过渡带及 660 km 以下依次降低。</li>
+      <li>统一到 1.0° 网格后，EARA2024 与 FWEA23 的 Vs 深度平均 SSIM 为 0.49，约为二者各自与 SinoScope1.0 比较值（约 0.28）的 1.7 倍。</li>
+      <li>每个模型分出 30 个速度簇。EARA2024 与 FWEA23 在 100–200 km 及过渡带的高速簇与 Slab2 重合；SinoScope1.0 保留同一套大尺度分区，边界更软。</li>
+      <li>FWEA23 与 EARA2024 的合成波形接近作者参考；SinoScope1.0 在 20–40 s 面波段偏差更大。地壳已固定为 CRUST1.0，该结论只对 Moho 以下成立。</li>
     </ul>
   </section>
-
   <section id="region" class="block">
-    <h2>Region and data</h2>
-    <p>The study region covers East Asia and the adjacent western Pacific, including the Tibetan Plateau, North and Northeast China, South China, Southeast Asia, and the Japan–Izu–Bonin–Mariana subduction system.</p>
-    <figure class="figure"><img src="assets/fig1.jpg" alt="Tectonic setting of East Asia (coastline, plate boundaries, volcanoes, Slab2)." loading="lazy"><figcaption><span class="fig-id">Fig. 1</span> Tectonic setting of East Asia (coastline, plate boundaries, volcanoes, Slab2). <span class="fig-zh">东亚研究区构造背景。底图给出海岸线、主要板块边界、火山和 Slab2 俯冲板片。</span></figcaption></figure>
-    <p>The waveform test set uses 30 events from GCMT / GCMT3D. Public FDSN stations are screened for three-component completeness, record length of at least 1800 s, and SNR ≥ 4 in 20–100 s. After screening, 135 stations enter the forward geometry (417 unique stations; 2161 event–station pairs; about 69% pass rate).</p>
-    <figure class="figure"><img src="assets/fig2.jpg" alt="Thirty events in the standard test set used for spectral-element forward tests." loading="lazy"><figcaption><span class="fig-id">Fig. 2</span> Thirty events in the standard test set used for spectral-element forward tests. <span class="fig-zh">标准测试集 30 个事件的空间分布，用于谱元法正演检验。</span></figcaption></figure>
-    <figure class="figure"><img src="assets/fig3.jpg" alt="Stations retained after waveform-quality screening." loading="lazy"><figcaption><span class="fig-id">Fig. 3</span> Stations retained after waveform-quality screening. <span class="fig-zh">通过波形质量筛选后用于正演的台站分布。</span></figcaption></figure>
-    <p class="note">Public FDSN coverage is sparse inside continental China relative to the ~814 provincial stations used by FWEA23. That gap must not be read as a model ranking.</p>
+    <h2>研究区与数据</h2>
+    <p>研究区覆盖东亚及西太平洋邻区，包括青藏高原、华北—东北、华南、东南亚，以及日本海沟—伊豆—小笠原—马里亚纳俯冲系统。</p>
+    <figure class="figure"><img src="assets/fig1.jpg" alt="东亚研究区构造背景。底图给出海岸线、主要板块边界、火山和 Slab2 俯冲板片。" loading="lazy"><figcaption><span class="fig-id">图 1</span> 东亚研究区构造背景。底图给出海岸线、主要板块边界、火山和 Slab2 俯冲板片。</figcaption></figure>
+    <p>波形检验测试集取自 GCMT / GCMT3D 的 30 个事件。公开 FDSN 台站经三分量完整、记录时长不少于 1800 s、20–100 s 频段信噪比不小于 4 筛选后，入选正演台站 135 个（独立台站 417 个，有效测量 2161 条，通过率约 69%）。</p>
+    <figure class="figure"><img src="assets/fig2.jpg" alt="标准测试集 30 个事件的空间分布，用于谱元法正演检验。" loading="lazy"><figcaption><span class="fig-id">图 2</span> 标准测试集 30 个事件的空间分布，用于谱元法正演检验。</figcaption></figure>
+    <figure class="figure"><img src="assets/fig3.jpg" alt="通过波形质量筛选后用于正演的台站分布。" loading="lazy"><figcaption><span class="fig-id">图 3</span> 通过波形质量筛选后用于正演的台站分布。</figcaption></figure>
+    <p class="note">相对 FWEA23 所用约 814 个中国省级台站，公开 FDSN 在中国大陆内部明显偏少。解释评分时不能把覆盖缺口读成模型优劣。</p>
   </section>
-
   <section id="models" class="block">
-    <h2>Model library</h2>
-    <p>Twenty-four published lithosphere–upper-mantle models (2018–2026) were collected from the literature and IRIS EMC. Only the three quasi-continental FWI models share a common volume for a single similarity matrix. Regional and local models are kept as qualitative references.</p>
-    <h3>Table 1. Three models used for quantitative scores</h3>
-    <table>
-      <thead>
-        <tr><th>Attribute</th><th>SinoScope1.0</th><th>EARA2024</th><th>FWEA23</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Reference</td><td>Ma et al., 2022</td><td>Xi et al., 2024</td><td>Liu et al., 2024</td></tr>
-        <tr><td>Horizontal grid</td><td>~1.0°</td><td>~0.25°</td><td>~0.25°</td></tr>
-        <tr><td>Depth (km)</td><td>0–2800</td><td>0–1000</td><td>0–1000</td></tr>
-        <tr><td>Events / stations</td><td>410 / 2427</td><td>142 / ~2000</td><td>141 / 4640</td></tr>
-        <tr><td>Shortest period (s)</td><td>30</td><td>8</td><td>15</td></tr>
-        <tr><td>Misfit</td><td>Time–frequency phase</td><td>Weighted NZCC</td><td>Windowed normalised CC</td></tr>
-        <tr><td>Radial anisotropy</td><td>No</td><td>ρ, VC, VSV, VSH, η</td><td>Upper 220 km</td></tr>
-        <tr><td>Starting model</td><td>CSEM</td><td>FWEA18 + EARA2014 + S362ANI</td><td>FWEA18 + EARA2014</td></tr>
-        <tr><td>Distribution</td><td>Regular NetCDF</td><td>Regular NetCDF</td><td>NetCDF + native GLL</td></tr>
-      </tbody>
-    </table>
-    <h3>Table S1. Catalog (by year)</h3>
-    <table>
-      <thead>
-        <tr><th>Model</th><th>Year</th><th>Parameters</th><th>Depth (km)</th><th>Footprint</th><th>Reference</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>CSEM_Japan</td><td>2018</td><td>Vs</td><td>0–350</td><td>Japan</td><td>Fichtner et al., 2018</td></tr>
-        <tr><td>FWEA18</td><td>2018</td><td>Vp, Vs</td><td>0–800</td><td>East Asia</td><td>Tao et al., 2018</td></tr>
-        <tr><td>TP2019</td><td>2020</td><td>Vs</td><td>25–700</td><td>Tibetan Plateau</td><td>Xiao et al., 2020</td></tr>
-        <tr><td>KEA20</td><td>2021</td><td>Vs</td><td>25–250</td><td>Korea–East Asia</td><td>Witek et al., 2021</td></tr>
-        <tr><td>SWChinaCVM-1.0</td><td>2021</td><td>Vp, Vs</td><td>0–50</td><td>SW China</td><td>Liu et al., 2021</td></tr>
-        <tr><td>SinoScope1.0</td><td>2022</td><td>Vp, Vs</td><td>0–2800</td><td>China and adjacent</td><td>Ma et al., 2022</td></tr>
-        <tr><td>USTClitho2.0</td><td>2022</td><td>Vp, Vs</td><td>0–150</td><td>Continental China</td><td>Han et al., 2022</td></tr>
-        <tr><td>SASSY21</td><td>2022</td><td>Vs</td><td>150–600</td><td>SE Asia</td><td>Wehner et al., 2022</td></tr>
-        <tr><td>CSRM1.0</td><td>2023</td><td>Vp, Vs</td><td>0–100</td><td>Continental China</td><td>Wen and Yu, 2023</td></tr>
-        <tr><td>SWChinaCVM-2.0</td><td>2023</td><td>Vp, Vs</td><td>0–50</td><td>SW China</td><td>Liu et al., 2023</td></tr>
-        <tr><td>ASIA2024</td><td>2024</td><td>Vp, Vs</td><td>0–690</td><td>Asia</td><td>Dou et al., 2024</td></tr>
-        <tr><td>EARA2024</td><td>2024</td><td>Vp, Vs</td><td>0–1000</td><td>East Asia–NW Pacific</td><td>Xi et al., 2024</td></tr>
-        <tr><td>FWEA23</td><td>2024</td><td>Vp, Vs</td><td>0–1000</td><td>East Asia</td><td>Liu et al., 2024</td></tr>
-        <tr><td>CSES_VM1.0</td><td>2024</td><td>Vp, Vs</td><td>0–75</td><td>N–S seismic belt</td><td>Wu et al., 2024</td></tr>
-        <tr><td>Gao_NEChina</td><td>2025</td><td>Vp</td><td>0–2500</td><td>NE China</td><td>Gao et al., 2025</td></tr>
-        <tr><td>Han_NEChina</td><td>2025</td><td>Vs</td><td>0–2500</td><td>NE China</td><td>Han et al., 2025</td></tr>
-      </tbody>
-    </table>
-    <p class="note">Additional local models (Chen_SChinaSea, Cao_SETibet, Kumar_Pamir, Wu_NETibet and later regional Vs models) are used only as local checks. Source files: IRIS EMC and paper supplements. This site does not host the NetCDF volumes.</p>
+    <h2>模型库</h2>
+    <p>共收集 2018–2026 年发表的 24 个岩石圈—上地幔模型。只有三个准全域 FWI 模型能进入同一套相似性矩阵；区域和局部模型仅作对照。</p>
+    <h3>表 1　定量对比所用的三个模型</h3>
+    <table><thead><tr><th>属性</th><th>SinoScope1.0</th><th>EARA2024</th><th>FWEA23</th></tr></thead><tbody>
+        <tr><td>文献</td><td>Ma et al., 2022</td><td>Xi et al., 2024</td><td>Liu et al., 2024</td></tr>
+        <tr><td>水平分辨率</td><td>~1.0°</td><td>~0.25°</td><td>~0.25°</td></tr>
+        <tr><td>深度 (km)</td><td>0–2800</td><td>0–1000</td><td>0–1000</td></tr>
+        <tr><td>地震 / 台站</td><td>410 / 2427</td><td>142 / ~2000</td><td>141 / 4640</td></tr>
+        <tr><td>最短周期 (s)</td><td>30</td><td>8</td><td>15</td></tr>
+        <tr><td>失配函数</td><td>时-频域相位</td><td>加权 NZCC</td><td>分震相归一化互相关</td></tr>
+        <tr><td>径向各向异性</td><td>否</td><td>ρ, VC, VSV, VSH, η</td><td>仅上部 220 km</td></tr>
+        <tr><td>初始模型</td><td>CSEM</td><td>FWEA18 + EARA2014 + S362ANI</td><td>FWEA18 + EARA2014</td></tr>
+        <tr><td>分发形式</td><td>规则网格 NetCDF</td><td>规则网格 NetCDF</td><td>NetCDF + 原生 GLL</td></tr>
+        </tbody></table>
+    <h3>表 S1　模型目录（按年份）</h3>
+    <table><thead><tr><th>模型</th><th>年份</th><th>参数</th><th>深度 (km)</th><th>覆盖</th><th>文献</th></tr></thead><tbody><tr><td>CSEM_Japan</td><td>2018</td><td>Vs</td><td>0–350</td><td>日本及邻区</td><td>Fichtner et al., 2018</td></tr>
+<tr><td>FWEA18</td><td>2018</td><td>Vp, Vs</td><td>0–800</td><td>东亚</td><td>Tao et al., 2018</td></tr>
+<tr><td>TP2019</td><td>2020</td><td>Vs</td><td>25–700</td><td>青藏高原</td><td>Xiao et al., 2020</td></tr>
+<tr><td>KEA20</td><td>2021</td><td>Vs</td><td>25–250</td><td>朝鲜半岛—东亚</td><td>Witek et al., 2021</td></tr>
+<tr><td>SWChinaCVM-1.0</td><td>2021</td><td>Vp, Vs</td><td>0–50</td><td>西南中国</td><td>Liu et al., 2021</td></tr>
+<tr><td>SinoScope1.0</td><td>2022</td><td>Vp, Vs</td><td>0–2800</td><td>中国及邻区</td><td>Ma et al., 2022</td></tr>
+<tr><td>USTClitho2.0</td><td>2022</td><td>Vp, Vs</td><td>0–150</td><td>中国大陆</td><td>Han et al., 2022</td></tr>
+<tr><td>SASSY21</td><td>2022</td><td>Vs</td><td>150–600</td><td>东南亚</td><td>Wehner et al., 2022</td></tr>
+<tr><td>CSRM1.0</td><td>2023</td><td>Vp, Vs</td><td>0–100</td><td>中国大陆</td><td>Wen and Yu, 2023</td></tr>
+<tr><td>SWChinaCVM-2.0</td><td>2023</td><td>Vp, Vs</td><td>0–50</td><td>西南中国</td><td>Liu et al., 2023</td></tr>
+<tr><td>ASIA2024</td><td>2024</td><td>Vp, Vs</td><td>0–690</td><td>亚洲</td><td>Dou et al., 2024</td></tr>
+<tr><td>EARA2024</td><td>2024</td><td>Vp, Vs</td><td>0–1000</td><td>东亚—西北太平洋</td><td>Xi et al., 2024</td></tr>
+<tr><td>FWEA23</td><td>2024</td><td>Vp, Vs</td><td>0–1000</td><td>东亚</td><td>Liu et al., 2024</td></tr>
+<tr><td>CSES_VM1.0</td><td>2024</td><td>Vp, Vs</td><td>0–75</td><td>南北地震带</td><td>Wu et al., 2024</td></tr>
+<tr><td>Gao_NEChina</td><td>2025</td><td>Vp</td><td>0–2500</td><td>东北</td><td>Gao et al., 2025</td></tr>
+<tr><td>Han_NEChina</td><td>2025</td><td>Vs</td><td>0–2500</td><td>东北</td><td>Han et al., 2025</td></tr></tbody></table>
+    <p class="note">Chen_SChinaSea、Cao_SETibet、Kumar_Pamir、Wu_NETibet 等局部模型只作对照。数据来自 IRIS EMC 与论文补充材料。本站不提供 NetCDF 或 GLL 下载。</p>
   </section>
-
   <section id="similarity" class="block">
-    <h2>Structural similarity</h2>
-    <p>SSIM (Wang et al., 2004) is computed layer by layer on a common 1.0° grid in the perturbation field δlnV. A phase-randomised surrogate gives a noise floor of about 0.05–0.07. One-dimensional SSIM of the horizontal-mean profiles is 0.90–0.99, so the disagreement lives in lateral pattern, not in the background gradient.</p>
-    <figure class="figure"><img src="assets/fig5.jpg" alt="1-D background profiles and depth-dependent SSIM for Vs and Vp." loading="lazy"><figcaption><span class="fig-id">Fig. 5</span> 1-D background profiles and depth-dependent SSIM for Vs and Vp. <span class="fig-zh">一维背景剖面与逐深度结构相似性（Vs / Vp）。</span></figcaption></figure>
-    <h3>Table 2. Depth-mean SSIM ± standard deviation</h3>
-    <table>
-      <thead>
-        <tr><th>Pair</th><th>Vs SSIM</th><th>Vs structure</th><th>Vp SSIM</th><th>Vp structure</th><th>Null (Vs / Vp)</th></tr>
-      </thead>
-      <tbody>
+    <h2>结构相似性</h2>
+    <p>在统一 1.0° 网格和扰动场 δlnV 上逐层计算 SSIM（Wang et al., 2004）。相位随机化零假设基线约 0.05–0.07。横向平均剖面的一维 SSIM 为 0.90–0.99，分歧在横向图案而不在背景梯度。</p>
+    <figure class="figure"><img src="assets/fig5.jpg" alt="一维背景剖面与逐深度结构相似性（Vs / Vp）。" loading="lazy"><figcaption><span class="fig-id">图 5</span> 一维背景剖面与逐深度结构相似性（Vs / Vp）。</figcaption></figure>
+    <h3>表 2　深度平均 SSIM ± 标准差</h3>
+    <table><thead><tr><th>模型对</th><th>Vs SSIM</th><th>Vs 结构项</th><th>Vp SSIM</th><th>Vp 结构项</th><th>零假设 (Vs / Vp)</th></tr></thead><tbody>
         <tr><td>SinoScope1.0–EARA2024</td><td>0.276 ± 0.147</td><td>0.305</td><td>0.196 ± 0.089</td><td>0.224</td><td>0.054 / 0.067</td></tr>
         <tr><td>SinoScope1.0–FWEA23</td><td>0.288 ± 0.148</td><td>0.332</td><td>0.198 ± 0.106</td><td>0.233</td><td>0.056 / 0.071</td></tr>
         <tr><td>EARA2024–FWEA23</td><td>0.494 ± 0.153</td><td>0.521</td><td>0.482 ± 0.101</td><td>0.509</td><td>0.053 / 0.054</td></tr>
-      </tbody>
-    </table>
-    <p>Lithosphere (80–200 km) is the closest band. The single-layer Vs peak is at 120 km (0.764 / 0.622 / 0.619). Values drop in the crust, below 200 km, and especially below 660 km. EARA2024–FWEA23 shows a one-node drop at 660 km that is more likely a phase-boundary parameterisation mismatch than a structural contrast.</p>
-    <figure class="figure"><img src="assets/fig4.jpg" alt="Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km." loading="lazy"><figcaption><span class="fig-id">Fig. 4</span> Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km. <span class="fig-zh">三个全域模型在 100、200、500 和 800 km 的 S 波速度相对扰动。</span></figcaption></figure>
+        </tbody></table>
+    <p>岩石圈（80–200 km）最接近，单层 Vs 峰值在 120 km（0.764 / 0.622 / 0.619）。地壳、200 km 以下及 660 km 以下依次降低。EARA2024–FWEA23 在 660 km 的单层突降，更可能来自相变面参数化差异，而不是真实结构对比。</p>
+    <figure class="figure"><img src="assets/fig4.jpg" alt="三个全域模型在 100、200、500 和 800 km 的 S 波速度相对扰动。" loading="lazy"><figcaption><span class="fig-id">图 4</span> 三个全域模型在 100、200、500 和 800 km 的 S 波速度相对扰动。</figcaption></figure>
   </section>
-
   <section id="clustering" class="block">
-    <h2>Velocity clusters</h2>
-    <p>A Gaussian mixture is fit independently in four depth bands (crust / lithospheric mantle / transition zone / lower mantle) on (δlnVp, δlnVs). The component counts are a tectonic prior, K = 10 / 10 / 5 / 5, not an argmin of BIC. Labels are sorted by mean δlnVs inside each band. Geology and Slab2 are overlaid only; no NMI or purity score is computed.</p>
-    <h3>Table 3. Depth-banded GMM</h3>
-    <table>
-      <thead>
-        <tr><th>Model</th><th>Clusters</th><th>Valid voxels</th><th>Silhouette</th><th>High confidence</th></tr>
-      </thead>
-      <tbody>
+    <h2>速度簇</h2>
+    <p>在地壳、岩石圈地幔、过渡带和下地幔四个深度带上，对 (δlnVp, δlnVs) 独立拟合高斯混合。分量数取构造先验 K = 10 / 10 / 5 / 5，不用 BIC 最小值。带内按平均 δlnVs 升序编号。地质界线与 Slab2 只作叠图，不计算符合度分数。</p>
+    <h3>表 3　深度分层 GMM</h3>
+    <table><thead><tr><th>模型</th><th>簇数</th><th>有效体元</th><th>轮廓系数</th><th>高置信度</th></tr></thead><tbody>
         <tr><td>SinoScope1.0</td><td>30</td><td>4.08×10⁵</td><td>0.297</td><td>53.4%</td></tr>
         <tr><td>EARA2024</td><td>30</td><td>5.81×10⁶</td><td>0.342</td><td>74.2%</td></tr>
         <tr><td>FWEA23</td><td>30</td><td>7.64×10⁶</td><td>0.343</td><td>75.9%</td></tr>
-      </tbody>
-    </table>
-    <figure class="figure"><img src="assets/fig6.jpg" alt="Depth-banded GMM velocity clusters of EARA2024, with Slab2 contours." loading="lazy"><figcaption><span class="fig-id">Fig. 6</span> Depth-banded GMM velocity clusters of EARA2024, with Slab2 contours. <span class="fig-zh">EARA2024 深度分层 GMM 速度簇水平切片，叠绘 Slab2。</span></figcaption></figure>
-    <figure class="figure"><img src="assets/fig7.jpg" alt="Longitude–depth cluster sections of EARA2024 with Slab2 outlines." loading="lazy"><figcaption><span class="fig-id">Fig. 7</span> Longitude–depth cluster sections of EARA2024 with Slab2 outlines. <span class="fig-zh">EARA2024 速度簇的经度—深度剖面，叠绘 Slab2 板片体。</span></figcaption></figure>
-    <figure class="figure"><img src="assets/fig8.jpg" alt="Cluster-wise dlnVp and dlnVs depth profiles of EARA2024." loading="lazy"><figcaption><span class="fig-id">Fig. 8</span> Cluster-wise dlnVp and dlnVs depth profiles of EARA2024. <span class="fig-zh">EARA2024 各速度簇的 dlnVp / dlnVs 深度剖面。</span></figcaption></figure>
-    <p class="note">Tiny crustal clusters concentrated in 0–10 km are amplitude fragments, not independent basins. The text discusses only first-order provinces: cratonic roots, back-arc lows, stagnant slabs, ambient mantle.</p>
+        </tbody></table>
+    <figure class="figure"><img src="assets/fig6.jpg" alt="EARA2024 深度分层 GMM 速度簇水平切片，叠绘 Slab2。" loading="lazy"><figcaption><span class="fig-id">图 6</span> EARA2024 深度分层 GMM 速度簇水平切片，叠绘 Slab2。</figcaption></figure>
+    <figure class="figure"><img src="assets/fig7.jpg" alt="EARA2024 速度簇的经度—深度剖面，叠绘 Slab2 板片体。" loading="lazy"><figcaption><span class="fig-id">图 7</span> EARA2024 速度簇的经度—深度剖面，叠绘 Slab2 板片体。</figcaption></figure>
+    <figure class="figure"><img src="assets/fig8.jpg" alt="EARA2024 各速度簇的 dlnVp / dlnVs 深度剖面。" loading="lazy"><figcaption><span class="fig-id">图 8</span> EARA2024 各速度簇的 dlnVp / dlnVs 深度剖面。</figcaption></figure>
+    <p class="note">地壳带体积很小、集中在 0–10 km 的若干簇是振幅碎片，不解释为独立盆地。正文只讨论克拉通根、弧后低速、滞留板片和环境地幔等一级格局。</p>
   </section>
-
   <section id="waveforms" class="block">
-    <h2>Forward waveforms</h2>
-    <p>SPECFEM3D Globe is run on one mesh for all three models, with identical CMTSOLUTION and STATIONS. Assignment order in the solver writes 3-D crust after the mantle. CRUST1.0 is therefore imposed above Moho in every run, so synthetic differences isolate mantle structure. The band is 20–40 s and 40–120 s. Present scores compare synthetics with the author reference (AuthorRef), not with observations.</p>
-    <figure class="figure"><img src="assets/fig9.jpg" alt="Traveltime, amplitude and waveform misfit of synthetics versus AuthorRef." loading="lazy"><figcaption><span class="fig-id">Fig. 9</span> Traveltime, amplitude and waveform misfit of synthetics versus AuthorRef. <span class="fig-zh">三模型合成波形相对作者参考波形的走时、振幅和波形形态汇总。</span></figcaption></figure>
-    <h3>Table 5. Median misfit versus AuthorRef (excerpt)</h3>
-    <table>
-      <thead>
-        <tr><th>Model</th><th>Band</th><th>Phase</th><th>|dT| (s)</th><th>NZCC</th><th>Rel. L2</th></tr>
-      </thead>
-      <tbody>
+    <h2>正演波形</h2>
+    <p>三模型在同一套 SPECFEM3D Globe 网格上正演，CMTSOLUTION 与 STATIONS 相同。求解器先写地幔再写地壳，因此三次计算在 Moho 以上都使用 CRUST1.0，合成波形差异只反映地幔。频段为 20–40 s 和 40–120 s。当前指标比较的是合成波形与作者参考波形（AuthorRef），还不是观测记录。</p>
+    <figure class="figure"><img src="assets/fig9.jpg" alt="三模型合成波形相对作者参考波形的走时、振幅和波形形态汇总。" loading="lazy"><figcaption><span class="fig-id">图 9</span> 三模型合成波形相对作者参考波形的走时、振幅和波形形态汇总。</figcaption></figure>
+    <h3>表 5　相对 AuthorRef 的中位数指标（节选）</h3>
+    <table><thead><tr><th>模型</th><th>频段</th><th>震相</th><th>|dT| (s)</th><th>NZCC</th><th>相对 L2</th></tr></thead><tbody>
         <tr><td>FWEA23</td><td>20–40 s</td><td>P(Z)</td><td>0.41</td><td>0.935</td><td>0.145</td></tr>
         <tr><td>EARA2024</td><td>20–40 s</td><td>P(Z)</td><td>0.35</td><td>0.920</td><td>0.171</td></tr>
         <tr><td>SinoScope1.0</td><td>20–40 s</td><td>P(Z)</td><td>2.68</td><td>0.714</td><td>0.592</td></tr>
@@ -165,31 +143,28 @@
         <tr><td>FWEA23</td><td>40–120 s</td><td>P(Z)</td><td>0.67</td><td>0.978</td><td>0.047</td></tr>
         <tr><td>EARA2024</td><td>40–120 s</td><td>P(Z)</td><td>0.42</td><td>0.979</td><td>0.052</td></tr>
         <tr><td>SinoScope1.0</td><td>40–120 s</td><td>P(Z)</td><td>3.07</td><td>0.908</td><td>0.188</td></tr>
-      </tbody>
-    </table>
-    <p>Body-wave long-period windows are stable. The 20–40 s surface-wave window is where SinoScope1.0 separates. Model-space SSIM order must not be read as a final observed-waveform ranking: AuthorRef is closer to FWEA23, only FWEA23 has native GLL, and crustal SSIM is excluded from these synthetics.</p>
-    <p class="note">Interactive submission to the Supercomputing Internet is not on this page. Precomputed figures are the current record of the forward tests.</p>
+        </tbody></table>
+    <p>长周期体波窗口最稳定。SinoScope1.0 与另外两模型的差别主要出现在 20–40 s 面波段。模型空间 SSIM 排序不能直接当作观测波形的最终排名：AuthorRef 更接近 FWEA23，目前只有 FWEA23 有原生 GLL，且正演不含地壳 SSIM 所度量的那部分差异。</p>
+    <p class="note">本页不提供向超算互联网提交作业。预计算图是当前正演记录。</p>
   </section>
-
   <section id="methods" class="block">
-    <h2>Methods in brief</h2>
-    <h3>Standardisation</h3>
-    <p>Models are rewritten as CF-compliant NetCDF with dimensions (latitude, longitude, depth). Speeds are in km/s, depth is positive downward from the surface. Names: vp, vs, vpv, vph, vsv, vsh, rho, eta. The three core models already have native Vp and Vs; Brocher (2005) and mantle scaling are not applied to them.</p>
-    <h3>Perturbation and common grid</h3>
-    <p>δlnV = (V − V̄(z)) / V̄(z), with V̄ the area-weighted horizontal mean. All pairs use the intersection domain (about 10°–55°N, 80°–150°E) on a 1.0° grid and a common validity mask (layer coverage about 0.90). A finer native grid would make pair-wise SSIM values incomparable.</p>
+    <h2>方法要点</h2>
+    <h3>标准化</h3>
+    <p>模型转为符合 CF 约定的 NetCDF，维度为 (latitude, longitude, depth)。速度单位 km/s，深度自地表向下为正。参数名：vp、vs、vpv、vph、vsv、vsh、rho、eta。三个核心模型已有原生 Vp 与 Vs，不使用 Brocher (2005) 或地幔比例补全。</p>
+    <h3>扰动域与统一网格</h3>
+    <p>δlnV = (V − V̄(z)) / V̄(z)，V̄ 为面积加权横向平均。所有模型对使用交集区域（约 10°–55°N，80°–150°E）、1.0° 网格和有效掩膜（逐层覆盖约 0.90）。若各对各取原生分辨率，矩阵内的 SSIM 将不可比。</p>
     <h3>SSIM</h3>
-    <p>Local statistics use a Gaussian window of σ = 2.0°. Layers are thickness-weighted. The structure term is reported separately so that a pure amplitude rescale is not confused with a pattern change. The null model keeps the power spectrum and randomises phase (20 draws, seed 42).</p>
-    <h3>Clustering</h3>
-    <p>Features are z-scored δlnVp and δlnVs. Bands follow Moho, 410 km and 660 km. Full-covariance GMMs are fit by EM. K is held fixed across models. BIC is diagnostic only.</p>
-    <h3>Forward tests</h3>
-    <p>SPECFEM3D Globe writes crust after mantle. Enabling a crustal model therefore overwrites Moho-up values. The runs share CRUST1.0 above Moho on purpose: residuals can be attributed to the mantle. The period floor is 20 s. Windows target SNR &gt; 4 and CC &gt; 0.7. Observed-waveform χT / χA / χF with geographic and category weights (Zhou et al., 2021) are reserved for a later paper.</p>
+    <p>局部统计使用 σ = 2.0° 的高斯窗口，再按层厚加权。单独给出结构项，以免把纯振幅标定误读为图案变化。零假设保持功率谱、随机化相位（20 次，种子 42）。</p>
+    <h3>聚类</h3>
+    <p>特征为标准化后的 δlnVp 与 δlnVs。分带界线为 Moho、410 km 和 660 km。完整协方差 GMM 由 EM 估计。三模型使用同一组 K。BIC 只作诊断。</p>
+    <h3>正演</h3>
+    <p>SPECFEM3D Globe 在地幔赋值之后写入地壳。启用地壳模块会覆盖 Moho 以上节点。三次正演共用 CRUST1.0，残差才能归因到地幔。频段下限为 20 s。窗口目标为信噪比大于 4 且互相关大于 0.7。观测波形的 χT / χA / χF 及地理—分类加权（Zhou et al., 2021）留待后续工作。</p>
   </section>
-
   <section id="cite" class="block">
-    <h2>Cite and data</h2>
-    <p>Cite this assessment as the manuscript in review. Model files remain with their authors and IRIS EMC; this page does not redistribute NetCDF or GLL binaries.</p>
+    <h2>引用与数据</h2>
+    <p>请引用在审稿件。模型文件仍由原作者和 IRIS EMC 分发，本站不提供 NetCDF 或 GLL。</p>
     <ol class="cite">
-      <li>Assessment manuscript: East Asian lithosphere–mantle seismic velocity models, a quantitative comparison. <i>Science China Earth Sciences</i>, in review.</li>
+      <li>评估文稿：东亚岩石圈—地幔地震速度模型定量对比。<i>中国科学：地球科学</i>，审稿中。</li>
       <li>Ma J, Bunge H, Thrastarson S, Fichtner A, Herwaarden D van, Tian Y, Chang S, Liu T. 2022. Seismic full-waveform inversion of the crust-mantle structure beneath China and adjacent regions. <i>J. Geophys. Res. Solid Earth</i>, 127(9), e2022JB024957.</li>
       <li>Liu C, Banerjee R, Grand S P, Sandvol E, Mitra S, Liang X, Wei S. 2024. A high-resolution seismic velocity model for East Asia using full-waveform tomography. <i>Earth Planet. Sci. Lett.</i>, 639, 118764.</li>
       <li>Xi Z, Chen M, Wei S S, Li J, Zhou T, Wang B, Kim Y. 2024. EARA2024: A radially anisotropic seismic velocity model for East Asia and the northwestern Pacific. <i>Geophys. J. Int.</i>, 239(2), 914–935.</li>
@@ -197,12 +172,11 @@
       <li>Zhou T, Li J, Xi Z, Chen M. 2021. Assessment of seismic tomographic models of the contiguous United States using spectral-element seismic waveforms. <i>Geophys. J. Int.</i>, 228(2), 1392–1414.</li>
       <li>IRIS DMC, 2011. Data Services Products: EMC. <a href="https://ds.iris.edu/ds/products/emc/">https://ds.iris.edu/ds/products/emc/</a></li>
     </ol>
-    <p class="note">Figures on this page are from the assessment manuscript. Rebuild with <code>python web/generate.py</code>.</p>
+    <p class="note">图件来自评估文稿。重新生成：<code>python3 web/generate.py</code>。</p>
   </section>
+
 </main>
-<footer class="site">
-  EASTMA · East Asia Seismic Model Assessment · National Key Science and Technology Program 2024ZD1001101 · Built 2026-09-21
-</footer>
+<footer class="site">EASTMA · 东亚速度模型评估 · 国家科技重大专项 2024ZD1001101 · 2026-09-21</footer>
 <script src="app.js"></script>
 </body>
 </html>

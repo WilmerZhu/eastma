@@ -31,9 +31,10 @@ header.site {
   padding: 0.85rem 1.25rem 0.4rem;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
 }
+.brand-wrap { display: flex; flex-direction: column; gap: 0.1rem; }
 .brand {
   font-family: "Avenir Next", "Segoe UI", sans-serif;
   letter-spacing: 0.14em;
@@ -43,6 +44,24 @@ header.site {
   color: var(--ink);
 }
 .brand-sub { font-size: 0.78rem; color: var(--muted); letter-spacing: 0; }
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.lang-switch a {
+  font-family: "Avenir Next", "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 0.74rem;
+  padding: 0.22rem 0.6rem;
+  text-decoration: none;
+  color: var(--muted);
+}
+.lang-switch a.current {
+  background: var(--accent);
+  color: #fff;
+  pointer-events: none;
+}
+.lang-switch a:hover:not(.current) { color: var(--accent); }
 nav.site {
   max-width: calc(var(--max) + 8rem);
   margin: 0 auto;
@@ -71,7 +90,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 2rem 1.25rem 4rem; }
 .hero .tag {
   display: inline-block;
   margin-top: 1rem;
-  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-family: "Avenir Next", "Segoe UI", "PingFang SC", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -117,7 +136,7 @@ table {
   background: var(--card);
 }
 th, td { border-bottom: 1px solid var(--line); padding: 0.45rem 0.5rem; text-align: left; vertical-align: top; }
-th { font-family: "Avenir Next", "Segoe UI", sans-serif; font-weight: 600; background: #efe8dc; }
+th { font-family: "Avenir Next", "Segoe UI", "PingFang SC", sans-serif; font-weight: 600; background: #efe8dc; }
 .note { font-size: 0.82rem; color: var(--muted); }
 .figure { margin: 1.1rem 0 1.4rem; }
 .figure img {
@@ -129,7 +148,6 @@ th { font-family: "Avenir Next", "Segoe UI", sans-serif; font-weight: 600; backg
 }
 .figure figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.45rem; }
 .fig-id { font-family: "Avenir Next", "Segoe UI", sans-serif; color: var(--accent); font-weight: 650; margin-right: 0.3rem; }
-.fig-zh { display: block; margin-top: 0.2rem; }
 .missing { color: var(--accent-2); font-size: 0.9rem; }
 .cite { font-size: 0.92rem; }
 .cite li { margin: 0.45rem 0; }

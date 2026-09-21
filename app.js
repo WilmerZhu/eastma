@@ -15,4 +15,13 @@
   });
   const start = (location.hash || "#home").replace("#", "");
   show(document.getElementById(start) ? start : "home");
+
+  const other = document.getElementById("lang-other");
+  if (other) {
+    other.addEventListener("click", (e) => {
+      e.preventDefault();
+      const base = other.getAttribute("href").split("#")[0];
+      location.href = base + (location.hash || "#home");
+    });
+  }
 })();

@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EASTMA — East Asia Seismic Model Assessment</title>
+  <title>East Asia Seismic Model Assessment</title>
   <meta name="description" content="Quantitative assessment of published East Asian lithosphere–mantle seismic velocity models.">
   <link rel="alternate" hreflang="en" href="./">
   <link rel="alternate" hreflang="zh-CN" href="../index.html">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=3">
 </head>
 <body>
 <header class="site">
   <div class="brand-bar">
-    <div class="brand-wrap">
-      <a class="brand" href="#home">EASTMA</a>
-      <span class="brand-sub sans">East Asia Seismic Model Assessment</span>
-    </div>
+    <a class="brand" href="#home">East Asia Seismic Model Assessment</a>
     <nav class="lang-switch" aria-label="Language">
       <a href="../index.html" id="lang-other">中文</a>
       <a href="#" class="current" aria-current="page">EN</a>
@@ -36,10 +33,16 @@
 
   <section id="home" class="block on">
     <div class="hero">
-      <p class="tag sans">Companion site</p>
-      <h1>EASTMA</h1>
-      <p class="lead">A repeatable assessment of published three-dimensional seismic velocity models for East Asia, combining model-space metrics with spectral-element forward tests.</p>
+      <p class="kicker sans">Published models · one comparison</p>
+      <h1>East Asian lithosphere–mantle velocity models</h1>
+      <p class="lead">One set of model-space metrics for published three-dimensional velocity models, plus spectral-element tests of the mantle.</p>
     </div>
+    <ol class="steps sans">
+      <li><span>01</span>Collect and standardise to NetCDF</li>
+      <li><span>02</span>Structural similarity in δlnV</li>
+      <li><span>03</span>Depth-banded clusters, with Slab2</li>
+      <li><span>04</span>SPECFEM3D Globe synthetics</li>
+    </ol>
     <div class="metrics">
       <div class="metric"><div class="v">24</div><div class="l">Published models catalogued</div></div>
       <div class="metric"><div class="v">3</div><div class="l">Core FWI models compared</div></div>
@@ -47,11 +50,11 @@
       <div class="metric"><div class="v">20–120 s</div><div class="l">Forward-test period band</div></div>
     </div>
     <h2>What is compared</h2>
-    <p>The quantitative results use SinoScope1.0, EARA2024 and FWEA23. All three are recent adjoint full-waveform models with overlapping East Asian coverage. Comparisons are made in the laterally demeaned perturbation domain so that different 1-D references do not dominate the scores.</p>
-    <p>Four completed steps are shown here: (1) collection and NetCDF standardisation; (2) structural similarity; (3) depth-banded Gaussian-mixture clustering against Slab2; (4) SPECFEM3D Globe synthetics with a common CRUST1.0 crust above Moho. Independent scoring against observed waveforms, model fusion and adjoint inversion are still in progress and are not conclusions of this site.</p>
+    <p>The quantitative results use SinoScope1.0, EARA2024 and FWEA23. All three are recent adjoint full-waveform models with overlapping East Asian coverage. Comparisons are made in the laterally demeaned perturbation domain so that different 1-D references do not dominate the scores. Forward runs share CRUST1.0 above Moho.</p>
+    <p>Independent scoring against observed waveforms, model fusion and adjoint inversion are still in progress and are not conclusions of this site.</p>
     <figure class="figure"><img src="../assets/fig4.jpg" alt="Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km." loading="lazy"><figcaption><span class="fig-id">Fig. 4</span> Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km.</figcaption></figure>
     <h3>Working conclusions (mantle only)</h3>
-    <ul>
+    <ul class="findings">
       <li>The three models are closest in the lithosphere (about 80–200 km). Vs SSIM is 0.55–0.72 there, then falls through the crust, transition zone and below 660 km.</li>
       <li>On a common 1.0° grid, EARA2024 and FWEA23 are about 1.7 times more similar to each other (Vs depth-mean SSIM 0.49) than either is to SinoScope1.0 (about 0.28).</li>
       <li>Each model yields 30 velocity clusters. High-velocity clusters at 100–200 km and in the transition zone coincide with Slab2 for EARA2024 and FWEA23; SinoScope1.0 keeps the same first-order provinces with softer boundaries.</li>
@@ -71,7 +74,7 @@
     <h2>Model library</h2>
     <p>Twenty-four published lithosphere–upper-mantle models (2018–2026) were collected from the literature and IRIS EMC. Only the three quasi-continental FWI models share a common volume for a single similarity matrix. Regional and local models are kept as qualitative references.</p>
     <h3>Table 1. Three models used for quantitative scores</h3>
-    <table><thead><tr><th>Attribute</th><th>SinoScope1.0</th><th>EARA2024</th><th>FWEA23</th></tr></thead><tbody>
+    <div class="table-wrap"><table><thead><tr><th>Attribute</th><th>SinoScope1.0</th><th>EARA2024</th><th>FWEA23</th></tr></thead><tbody>
         <tr><td>Reference</td><td>Ma et al., 2022</td><td>Xi et al., 2024</td><td>Liu et al., 2024</td></tr>
         <tr><td>Horizontal grid</td><td>~1.0°</td><td>~0.25°</td><td>~0.25°</td></tr>
         <tr><td>Depth (km)</td><td>0–2800</td><td>0–1000</td><td>0–1000</td></tr>
@@ -81,9 +84,9 @@
         <tr><td>Radial anisotropy</td><td>No</td><td>ρ, VC, VSV, VSH, η</td><td>Upper 220 km</td></tr>
         <tr><td>Starting model</td><td>CSEM</td><td>FWEA18 + EARA2014 + S362ANI</td><td>FWEA18 + EARA2014</td></tr>
         <tr><td>Distribution</td><td>Regular NetCDF</td><td>Regular NetCDF</td><td>NetCDF + native GLL</td></tr>
-        </tbody></table>
+        </tbody></table></div>
     <h3>Table S1. Catalog (by year)</h3>
-    <table><thead><tr><th>Model</th><th>Year</th><th>Parameters</th><th>Depth (km)</th><th>Footprint</th><th>Reference</th></tr></thead><tbody><tr><td>CSEM_Japan</td><td>2018</td><td>Vs</td><td>0–350</td><td>Japan</td><td>Fichtner et al., 2018</td></tr>
+    <div class="table-wrap"><table><thead><tr><th>Model</th><th>Year</th><th>Parameters</th><th>Depth (km)</th><th>Footprint</th><th>Reference</th></tr></thead><tbody><tr><td>CSEM_Japan</td><td>2018</td><td>Vs</td><td>0–350</td><td>Japan</td><td>Fichtner et al., 2018</td></tr>
 <tr><td>FWEA18</td><td>2018</td><td>Vp, Vs</td><td>0–800</td><td>East Asia</td><td>Tao et al., 2018</td></tr>
 <tr><td>TP2019</td><td>2020</td><td>Vs</td><td>25–700</td><td>Tibetan Plateau</td><td>Xiao et al., 2020</td></tr>
 <tr><td>KEA20</td><td>2021</td><td>Vs</td><td>25–250</td><td>Korea–East Asia</td><td>Witek et al., 2021</td></tr>
@@ -98,7 +101,7 @@
 <tr><td>FWEA23</td><td>2024</td><td>Vp, Vs</td><td>0–1000</td><td>East Asia</td><td>Liu et al., 2024</td></tr>
 <tr><td>CSES_VM1.0</td><td>2024</td><td>Vp, Vs</td><td>0–75</td><td>N–S seismic belt</td><td>Wu et al., 2024</td></tr>
 <tr><td>Gao_NEChina</td><td>2025</td><td>Vp</td><td>0–2500</td><td>NE China</td><td>Gao et al., 2025</td></tr>
-<tr><td>Han_NEChina</td><td>2025</td><td>Vs</td><td>0–2500</td><td>NE China</td><td>Han et al., 2025</td></tr></tbody></table>
+<tr><td>Han_NEChina</td><td>2025</td><td>Vs</td><td>0–2500</td><td>NE China</td><td>Han et al., 2025</td></tr></tbody></table></div>
     <p class="note">Additional local models (Chen_SChinaSea, Cao_SETibet, Kumar_Pamir, Wu_NETibet and later regional Vs models) are used only as local checks. Source files: IRIS EMC and paper supplements. This site does not host the NetCDF volumes.</p>
   </section>
   <section id="similarity" class="block">
@@ -106,11 +109,11 @@
     <p>SSIM (Wang et al., 2004) is computed layer by layer on a common 1.0° grid in the perturbation field δlnV. A phase-randomised surrogate gives a noise floor of about 0.05–0.07. One-dimensional SSIM of the horizontal-mean profiles is 0.90–0.99, so the disagreement lives in lateral pattern, not in the background gradient.</p>
     <figure class="figure"><img src="../assets/fig5.jpg" alt="1-D background profiles and depth-dependent SSIM for Vs and Vp." loading="lazy"><figcaption><span class="fig-id">Fig. 5</span> 1-D background profiles and depth-dependent SSIM for Vs and Vp.</figcaption></figure>
     <h3>Table 2. Depth-mean SSIM ± standard deviation</h3>
-    <table><thead><tr><th>Pair</th><th>Vs SSIM</th><th>Vs structure</th><th>Vp SSIM</th><th>Vp structure</th><th>Null (Vs / Vp)</th></tr></thead><tbody>
+    <div class="table-wrap"><table><thead><tr><th>Pair</th><th>Vs SSIM</th><th>Vs structure</th><th>Vp SSIM</th><th>Vp structure</th><th>Null (Vs / Vp)</th></tr></thead><tbody>
         <tr><td>SinoScope1.0–EARA2024</td><td>0.276 ± 0.147</td><td>0.305</td><td>0.196 ± 0.089</td><td>0.224</td><td>0.054 / 0.067</td></tr>
         <tr><td>SinoScope1.0–FWEA23</td><td>0.288 ± 0.148</td><td>0.332</td><td>0.198 ± 0.106</td><td>0.233</td><td>0.056 / 0.071</td></tr>
         <tr><td>EARA2024–FWEA23</td><td>0.494 ± 0.153</td><td>0.521</td><td>0.482 ± 0.101</td><td>0.509</td><td>0.053 / 0.054</td></tr>
-        </tbody></table>
+        </tbody></table></div>
     <p>Lithosphere (80–200 km) is the closest band. The single-layer Vs peak is at 120 km (0.764 / 0.622 / 0.619). Values drop in the crust, below 200 km, and especially below 660 km. EARA2024–FWEA23 shows a one-node drop at 660 km that is more likely a phase-boundary parameterisation mismatch than a structural contrast.</p>
     <figure class="figure"><img src="../assets/fig4.jpg" alt="Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km." loading="lazy"><figcaption><span class="fig-id">Fig. 4</span> Relative S-wave perturbation dlnVs at 100, 200, 500 and 800 km.</figcaption></figure>
   </section>
@@ -118,11 +121,11 @@
     <h2>Velocity clusters</h2>
     <p>A Gaussian mixture is fit independently in four depth bands (crust / lithospheric mantle / transition zone / lower mantle) on (δlnVp, δlnVs). The component counts are a tectonic prior, K = 10 / 10 / 5 / 5, not an argmin of BIC. Labels are sorted by mean δlnVs inside each band. Geology and Slab2 are overlaid only; no NMI or purity score is computed.</p>
     <h3>Table 3. Depth-banded GMM</h3>
-    <table><thead><tr><th>Model</th><th>Clusters</th><th>Valid voxels</th><th>Silhouette</th><th>High confidence</th></tr></thead><tbody>
+    <div class="table-wrap"><table><thead><tr><th>Model</th><th>Clusters</th><th>Valid voxels</th><th>Silhouette</th><th>High confidence</th></tr></thead><tbody>
         <tr><td>SinoScope1.0</td><td>30</td><td>4.08×10⁵</td><td>0.297</td><td>53.4%</td></tr>
         <tr><td>EARA2024</td><td>30</td><td>5.81×10⁶</td><td>0.342</td><td>74.2%</td></tr>
         <tr><td>FWEA23</td><td>30</td><td>7.64×10⁶</td><td>0.343</td><td>75.9%</td></tr>
-        </tbody></table>
+        </tbody></table></div>
     <figure class="figure"><img src="../assets/fig6.jpg" alt="Depth-banded GMM velocity clusters of EARA2024, with Slab2 contours." loading="lazy"><figcaption><span class="fig-id">Fig. 6</span> Depth-banded GMM velocity clusters of EARA2024, with Slab2 contours.</figcaption></figure>
     <figure class="figure"><img src="../assets/fig7.jpg" alt="Longitude–depth cluster sections of EARA2024 with Slab2 outlines." loading="lazy"><figcaption><span class="fig-id">Fig. 7</span> Longitude–depth cluster sections of EARA2024 with Slab2 outlines.</figcaption></figure>
     <figure class="figure"><img src="../assets/fig8.jpg" alt="Cluster-wise dlnVp and dlnVs depth profiles of EARA2024." loading="lazy"><figcaption><span class="fig-id">Fig. 8</span> Cluster-wise dlnVp and dlnVs depth profiles of EARA2024.</figcaption></figure>
@@ -133,7 +136,7 @@
     <p>SPECFEM3D Globe is run on one mesh for all three models, with identical CMTSOLUTION and STATIONS. Assignment order in the solver writes 3-D crust after the mantle. CRUST1.0 is therefore imposed above Moho in every run, so synthetic differences isolate mantle structure. The band is 20–40 s and 40–120 s. Present scores compare synthetics with the author reference (AuthorRef), not with observations.</p>
     <figure class="figure"><img src="../assets/fig9.jpg" alt="Traveltime, amplitude and waveform misfit of synthetics versus AuthorRef." loading="lazy"><figcaption><span class="fig-id">Fig. 9</span> Traveltime, amplitude and waveform misfit of synthetics versus AuthorRef.</figcaption></figure>
     <h3>Table 5. Median misfit versus AuthorRef (excerpt)</h3>
-    <table><thead><tr><th>Model</th><th>Band</th><th>Phase</th><th>|dT| (s)</th><th>NZCC</th><th>Rel. L2</th></tr></thead><tbody>
+    <div class="table-wrap"><table><thead><tr><th>Model</th><th>Band</th><th>Phase</th><th>|dT| (s)</th><th>NZCC</th><th>Rel. L2</th></tr></thead><tbody>
         <tr><td>FWEA23</td><td>20–40 s</td><td>P(Z)</td><td>0.41</td><td>0.935</td><td>0.145</td></tr>
         <tr><td>EARA2024</td><td>20–40 s</td><td>P(Z)</td><td>0.35</td><td>0.920</td><td>0.171</td></tr>
         <tr><td>SinoScope1.0</td><td>20–40 s</td><td>P(Z)</td><td>2.68</td><td>0.714</td><td>0.592</td></tr>
@@ -143,7 +146,7 @@
         <tr><td>FWEA23</td><td>40–120 s</td><td>P(Z)</td><td>0.67</td><td>0.978</td><td>0.047</td></tr>
         <tr><td>EARA2024</td><td>40–120 s</td><td>P(Z)</td><td>0.42</td><td>0.979</td><td>0.052</td></tr>
         <tr><td>SinoScope1.0</td><td>40–120 s</td><td>P(Z)</td><td>3.07</td><td>0.908</td><td>0.188</td></tr>
-        </tbody></table>
+        </tbody></table></div>
     <p>Body-wave long-period windows are stable. The 20–40 s surface-wave window is where SinoScope1.0 separates. Model-space SSIM order must not be read as a final observed-waveform ranking: AuthorRef is closer to FWEA23, only FWEA23 has native GLL, and crustal SSIM is excluded from these synthetics.</p>
     <p class="note">Interactive submission to the Supercomputing Internet is not on this page. Precomputed figures are the current record of the forward tests.</p>
   </section>
@@ -172,11 +175,11 @@
       <li>Zhou T, Li J, Xi Z, Chen M. 2021. Assessment of seismic tomographic models of the contiguous United States using spectral-element seismic waveforms. <i>Geophys. J. Int.</i>, 228(2), 1392–1414.</li>
       <li>IRIS DMC, 2011. Data Services Products: EMC. <a href="https://ds.iris.edu/ds/products/emc/">https://ds.iris.edu/ds/products/emc/</a></li>
     </ol>
-    <p class="note">Figures on this page are from the assessment manuscript. Rebuild with <code>python3 web/generate.py</code>.</p>
+    <p class="note">Figures on this page are from the assessment manuscript.</p>
   </section>
 
 </main>
-<footer class="site">EASTMA · East Asia Seismic Model Assessment · National Key Science and Technology Program 2024ZD1001101 · 2026-09-21</footer>
-<script src="../app.js"></script>
+<footer class="site">East Asia Seismic Model Assessment · National Key Science and Technology Program 2024ZD1001101 · 2026-09-22</footer>
+<script src="../app.js?v=3"></script>
 </body>
 </html>
